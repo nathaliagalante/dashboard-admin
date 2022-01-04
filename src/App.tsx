@@ -1,40 +1,26 @@
-import React, { useEffect, useState } from "react";
-import logo from "./logo.svg";
-import "./App.css";
+import React from "react";
+import Users from "./components/Users";
+import Cards from "./components/Cards";
+
+import "antd/dist/antd.css";
+import { Container } from "react-bootstrap";
+import Audits from "./components/Audits";
+
 
 function App() {
-  const [users, setUsers] = useState([]);
+  
   const url =
     process.env.NODE_ENV === "production"
       ? "/api"
       : "http://localhost:3001/api";
 
-  useEffect(() => {
-    fetch(`${url}/users`)
-      .then(function (response) {
-        return response.json();
-      })
-      .then(setUsers);
-  }, [url]);
 
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-        <p>{JSON.stringify(users)}</p>
-      </header>
-    </div>
+    <Container>
+        <Users url={url}></Users>
+        <Cards url={url}></Cards>
+        <Audits url={url}></Audits>
+    </Container>
   );
 }
 
