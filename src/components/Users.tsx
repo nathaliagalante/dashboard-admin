@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { Table } from 'antd';
+import { Container } from "react-bootstrap";
 
 const Users = (props: { url: any; }) => {
     const [users, setUsers] = useState([]);
@@ -32,8 +33,7 @@ const Users = (props: { url: any; }) => {
 
 
     return (
-        <>
-        <div>
+        <Container>
             <h1>Users</h1>
             <Table 
                 columns={columns} 
@@ -42,8 +42,7 @@ const Users = (props: { url: any; }) => {
                 size="middle"
             > 
             </Table>
-        </div>
-        </>
+        </Container>
     );
 }
 
