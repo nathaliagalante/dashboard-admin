@@ -2,8 +2,9 @@ import React, { useEffect, useState } from "react";
 import { Table } from 'antd';
 import { Container } from "react-bootstrap";
 
-const Users = (props: { url: any; }) => {
+const Users = (props: any) => {
     const [users, setUsers] = useState([]);
+   
 
     const columns = [
         {
@@ -20,6 +21,12 @@ const Users = (props: { url: any; }) => {
             title: 'Email',
             dataIndex: 'email',
             key: 'email',
+        },
+        {
+            title: 'Salary Base',
+            dataIndex: 'salaryBase',
+            key: 'salaryBase',
+            render: (item: any) => props.user?.roles.includes('n2') ? item : '-'
         },
     ]
 
