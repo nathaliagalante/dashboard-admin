@@ -26,7 +26,8 @@ const Login = (props: any) => {
 
 
     return (
-        <Container>
+        <Container style={{minHeight: '100vh', display: 'flex', alignItems: 'center', justifyContent: 'center', flexDirection: 'column'}}>
+            <h3 className="mb-4">Sign in</h3>
             <Form name="normal_login" className="login-form" onFinish={handleSubmit}>
                 <Form.Item
                     name="email"
