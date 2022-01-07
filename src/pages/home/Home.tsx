@@ -6,7 +6,7 @@ import Cards from "../../components/Cards";
 import Audits from "../../components/Audits";
 
 import { Button, Layout, Menu } from 'antd';
-import { TeamOutlined } from '@ant-design/icons';
+import { TeamOutlined, CreditCardOutlined, FileSyncOutlined } from '@ant-design/icons';
 
 
 import { UserContext } from "../../services/UserContext";
@@ -40,22 +40,39 @@ const Home = (props: any) => {
 
             <Layout>
                 <Sider width={200} className="site-layout-background">
-                    <Menu
-                    mode="inline"
-                    defaultOpenKeys={['sub1']}
-                    style={{ height: '100%', borderRight: 0 }}
-                    >
-                        <Menu.Item key="1" icon={<TeamOutlined />}>
-                            <Link to="home/users">Users</Link>
-                        </Menu.Item>
-                        <Menu.Item key="2">
-                            <Link to="home/cards">Cards</Link>
-                        </Menu.Item>
-                        <Menu.Item key="3">
-                            <Link to="home/audits">Audits</Link>
-                        </Menu.Item>
+                    {user.roles.includes('n2') ? 
+                        <Menu
+                        mode="inline"
+                        defaultOpenKeys={['sub1']}
+                        style={{ height: '100%', borderRight: 0 }}
+                        >
+                            <Menu.Item key="1" icon={<TeamOutlined />}>
+                                <Link to="home/users">Users</Link>
+                            </Menu.Item>
+                            <Menu.Item key="2" icon={<CreditCardOutlined />}>
+                                <Link to="home/cards">Cards</Link>
+                            </Menu.Item>
+                            <Menu.Item key="3" icon={<FileSyncOutlined />}>
+                                <Link to="home/audits">Audits</Link>
+                            </Menu.Item> 
+                        </Menu>
+                        :
+                        <Menu
+                        mode="inline"
+                        defaultOpenKeys={['sub1']}
+                        style={{ height: '100%', borderRight: 0 }}
+                        >
+                            <Menu.Item key="1" icon={<TeamOutlined />}>
+                                <Link to="home/users">Users</Link>
+                            </Menu.Item>
+                            <Menu.Item key="2" icon={<CreditCardOutlined />}>
+                                <Link to="home/cards">Cards</Link>
+                            </Menu.Item>
+                        </Menu>
+                    }
                         
-                    </Menu>
+                        
+                    
                 </Sider>
 
                 <Layout style={{ padding: '24px' }}>
@@ -67,9 +84,9 @@ const Home = (props: any) => {
                         }}
                     >
                         <Routes>
-                            <Route path="home/users" element={<Users url={props.url} />}></Route>
-                            <Route path="home/cards" element={<Cards url={props.url} />}></Route>
-                            <Route path="home/audits" element={<Audits url={props.url} />}></Route>
+                            <Route path="home/users" element={<Users url={props.url} user={props.user} />}></Route>
+                            <Route path="home/cards" element={<Cards url={props.url}  />}></Route>
+                            <Route path="home/audits" element={<Audits url={props.url}  />}></Route>
                         </Routes>
 
                     </Content>
