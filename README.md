@@ -28,7 +28,6 @@
 - POST http://localhost:3001/api/audits
 - POST http://localhost:3001/api/cards
 - DELETE http://localhost:3001/api/cards/:id
-<br />
 
 ## Tecnologias
 - React
