@@ -1,6 +1,5 @@
 <p align="center">
-  <strong>Desafio Admin-web</strong><br>
-  <br>
+  <h1>Desafio Admin-web</h1>
 </p>
 
 ---
