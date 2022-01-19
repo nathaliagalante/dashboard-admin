@@ -1,5 +1,9 @@
 <h1 align="center">Desafio Admin-web</h1>
 
+### Sobre
+- Projeto desenvolvido para a etapa de desafio de uma vaga de desenvolvedor front-end júnior
+- A API foi desenvolvida pela empresa, e o front-end inteiramente por mim
+
 ### Contextualização
 - Aplicação de gestão financeira para o mundo dos negócios de uma nova empresa que está em constante crescimento
 - A empresa tem usuários em sua base de dados e agora vai começar a oferecer cartão de crédito para eles
