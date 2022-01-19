@@ -1,8 +1,4 @@
-<p align="center">
-  <h1>Desafio Admin-web</h1>
-</p>
-
----
+<h1 align="center">Desafio Admin-web</h1>
 
 ### Contextualização
 - Aplicação de gestão financeira para o mundo dos negócios de uma nova empresa que está em constante crescimento
