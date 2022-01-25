@@ -37,7 +37,7 @@ const Cards = (props: { url: any; }) => {
 
         const data = {
             id: item.id,
-            metadatas: { name : item.metadatas.name = username},
+            metadatas: { name : item.metadatas.name = username, limit : item.metadatas.limit},
             status: item.status,
             createdAt: item.createdAt,
             updatedAt: date
@@ -67,7 +67,7 @@ const Cards = (props: { url: any; }) => {
     const handleOk = (user: any) => {
         const date = getDate();
 
-        const card = { metadatas : { name: user.name}};
+        const card = { metadatas : { name: user.name }};
 
         const data = {
             id: user.id,
@@ -224,20 +224,20 @@ const Cards = (props: { url: any; }) => {
                     {user.roles.includes('n2') ? 
                         <Space size="middle">
                             <Tooltip title="Approve">
-                        <Button type="primary" icon={<CheckOutlined />} onClick={() => changeCardStatus(record, 'a')}></Button>
-                        </Tooltip>
-                        
-                        <Tooltip title="Reject">
-                            <Button type="dashed" icon={<CloseOutlined />} onClick={() => changeCardStatus(record, 'r')}></Button>
-                        </Tooltip>
+                                <Button type="primary" icon={<CheckOutlined />} onClick={() => changeCardStatus(record, 'a')}></Button>
+                            </Tooltip>
+                            
+                            <Tooltip title="Reject">
+                                <Button type="dashed" icon={<CloseOutlined />} onClick={() => changeCardStatus(record, 'r')}></Button>
+                            </Tooltip>
 
-                        <Tooltip title="Edit">
-                            <Button type="default" icon={<EditOutlined />} onClick={() => showModalEditing(record, 'editing')} ></Button>
-                        </Tooltip>
+                            <Tooltip title="Edit">
+                                <Button type="default" icon={<EditOutlined />} onClick={() => showModalEditing(record, 'editing')} ></Button>
+                            </Tooltip>
 
-                        <Tooltip title="Delete">
-                            <Button danger icon={<DeleteOutlined/>} onClick={() => deleteCard(record)} ></Button>
-                        </Tooltip>   
+                            <Tooltip title="Delete">
+                                <Button danger icon={<DeleteOutlined/>} onClick={() => deleteCard(record)} ></Button>
+                            </Tooltip>   
                         </Space>
                     :
 
